@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="generator" content="Jekyll v3.7.4"/>
+  
+  <meta name="description" content="There’s an additional risk that comes along when using a VPN. It’s called a DNS leak...">
+  
+  
+  <meta name="keywords" content="how to prevent dns leaks"/>
+  
+  <meta name="author" content="Sarah Merkel"/>
+  
+  <title>How to prevent DNS leaks when using a VPN</title>
+  
+  
+  <meta property="og:title" content="How to prevent DNS leaks when using a VPN"/>
+  <meta property="og:image" content="https://tegant.com/assets/post-img/tegant-dns-leak-prevention.jpg"/>
+  <meta property="og:url" content="https://tegant.com/en/how-to-prevent-dns-leaks/"/>
+  <meta property="og:description" content="There’s an additional risk that comes along when using a VPN. It’s called a DNS leak..."/>
+  
+  <meta property="og:locale" content="en"/>
+  <meta property="og:site_name" content="Tegant VPN"/>
+  <meta property="og:type" content="website"/>
+  <meta property="fb:app_id" content="235885337087643"/>
+  
+  <link rel="canonical" href="https://tegant.com/en/how-to-prevent-dns-leaks/"/>
+  <script type="application/ld+json">
+    {
+      "name": "Tegant VPN",
+      "description": "Reliable, Fast, and Secure - Tegant VPN is a name you can trust.",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Merkel"
+      },
+      "@type": "WebSite",
+      "url": "https://tegant.com/en/how-to-prevent-dns-leaks/",
+      "headline": "How to prevent DNS leaks when using a VPN",
+      "@context": "http://schema.org"
+    }
+  </script>
+  
+  <!-- End Jekyll SEO tag -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/new-age/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/new-age/vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="/assets/new-age/device-mockups/device-mockups.min.css">
+  <!-- Custom styles for this template -->
+  <link href="/assets/new-age/css/new-age.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/new-age/css/custom.min.css">
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+  
+  <script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111928528-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAdgaen6O7">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAdgaen6O7">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAdgaen6O7" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAdgaen6O7">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "/en/privacy"
+  }
+})});
+</script>
+
+</head>
+
+
+  <body id="page-top">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=235885337087643&autoLogAppEvents=1"></script>
+
+    <main class="page-content" aria-label="Content">
+
+        <div class="masthead-post">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-8 offset-lg-2 my-auto">
+                <article class="post h-entry article">
+                    <header class="post-header">
+                        <h1 class="post-title p-name">How to prevent DNS leaks when using a VPN</h1>
+                    </header>
+                    <div class="post-content e-content">
+                        <p><img src="/assets/post-img/dns-leak.jpg" alt="DNS Leak - like water leaking" class="img-responsive" />
+<sub>Photo by June Wong</sub></p>
+
+<p>Hackers, stolen credit card information, trolls, geo-restrictions, blocked content, censored sites — the Internet can be a minefield. That’s why it’s important to protect yourself when you’re online. Many people do this using VPNs (virtual private networks) that hide their identity and keep their online activities anonymous.</p>
+
+<p>However, there’s an additional risk that comes along when using a VPN. It’s called a DNS leak. Let’s talk about what DNS leaks are and how you can prevent them and guarantee your privacy online when using a VPN.</p>
+
+<h3 id="first-things-first-whats-dns-furthermore-whats-a-dns-leak">First things first: What’s DNS? Furthermore, what’s a DNS leak?</h3>
+<p>DNS stands for Domain Name System. It’s kind of like the address book of the Internet - the ones that humans use. Every ‘place’ and site on the Internet has a domain name, which we use to find and access them. The DNS system translates domains into IP addresses. Browsers and machines are more comfortable with such IP addresses. The DNS makes it so that ordinary Internet users don’t have to memorize long IP addresses, making the Internet much more user-friendly. A DNS leak is something that happens to VPN users. The purpose of a VPN is to create a secure ‘tunnel’ through which a user’s data and activity pass, instead of being exposed to anybody looking.</p>
+
+<p>A DNS leak is when DNS requests are made through the non-anonymous network of your Internet Service Provider (ISP) instead of through your VPN and its dedicated DNS servers.</p>
+
+<p>This leak means that most of your activity may be moving through your VPN’s tunnel, but each DNS request is not. Other parties — such as your ISP — will be able to see which websites you’ve visited. Your ISP may log the sites you have visited and put your privacy at risk.</p>
+
+<p><br /></p>
+
+<h3 id="why-does-this-happen">Why does this happen?</h3>
+<p>DNS leaks happen for a few reasons. One of the most common is a manual configuration of your VPN. This configuration makes the chance of DNS leaks higher, as the VPN won’t be using the ideal settings — or its built-in DNS leak-protection software, which we’ll talk about below — to prevent DNS leaks.</p>
+
+<p>Another reason this happens is a manual DNS config. This type of configuration is when a user has changed the settings to have DNS go through a non-anonymous DNS server such as Google or the ISP’s internal DNS server. Both are bad choices for anonymity.</p>
+
+<p>Another is malicious attacks. These are more likely to occur on unsecured networks, like in cafes or other public places. The attacker accesses your device and redirects your DNS requests to a malicious DNS server to log your activities.</p>
+
+<p>To keep your online activities from prying eyes, you have to route all your traffic – including the DNS requests – from your device to the VPN server. The DNS requests have to go through the VPN tunnel to your VPN provider’s DNS servers and should never go through your ISP’s DNS server.</p>
+
+<p><br /></p>
+
+<h3 id="can-it-be-fixed">Can it be fixed?</h3>
+<p>Yes! Fortunately, DNS leaks are a solvable problem.
+The first step is performing a DNS leak test — there are a considerable number of sites out there that will accomplish this service quickly and freely, like <a href="https://dnsleaktest.com" rel="nofollow">dnsleaktest.com</a> or <a href="https://ipleak.net" rel="nofollow">ipleak.net</a>.</p>
+
+<p>First, connect to your current VPN (if you have one; if you don’t, don’t worry about this step) and then do a leak test. If you have a leak: one way to solve it involves playing around with the settings and config of your computer and operating system to prevent your DNS queries from being leaked to the world. This approach is a possibility, but there’s a much easier (and in the long run, since it covers other security gaps, much more secure) method: using a VPN that includes DNS leak- protection features.</p>
+
+<p><img src="/assets/post-img/tegant-dns-leak-prevention.jpg" alt="Tegant DNS Leak Prevention - Man looking exposed" class="img-responsive" />
+<sub>Photo by Tom Sodoge</sub></p>
+
+<h3 id="which-vpn-comes-with-dns-leak-protection">Which VPN comes with DNS leak protection?</h3>
+<p>One of the significant VPN players is Tegant, which comes with DNS leak preventing features that complete its security package. It doesn’t make sense to use a VPN - much less pay for one - that doesn’t protect your anonymity fully.
+Tegant is aware of this, and in its safety package includes DNS leak protection. What’s more, the protection feature merely is part of Tegant VPN’s service. That means that whenever you use Tegant and access the web, you’re fully protected — unlike some other VPNs which send most of your data through their secure network, but still leave you exposed through DNS leaks. Tegant’s DNS leak-prevention is easy to use, reliable, and effective. When you turn on Tegant, you can be sure that this often-exploited gap in many VPN’s defenses is safely covered.</p>
+
+<p><br /></p>
+
+<h3 id="so-other-vpns-dont-prevent-dns-leaks-how-else-is-tegant-different-from-other-vpns">So other VPNs don’t prevent DNS leaks? How else is Tegant different from other VPNs?</h3>
+<p>Tegant is a VPN designed by great software engineers, to be used by real people. Here are some of the other cool features they have:</p>
+<ul>
+  <li>
+    <p>Tegant has an unpaid version that’s accessible just by watching an ad now and then. Most other free VPNs have data limits or restrict your access to get you to pay, but Tegant lets you browse at full speed, no matter what.</p>
+  </li>
+  <li>
+    <p>Tegant’s built-in DNS leak protection is part of a bigger package of total security that comes from its cutting-edge technology. All of Tegant’s software uses some of the most advanced technology available, like in their encryption - other VPNs use outdated and less secure encryption methods.</p>
+  </li>
+  <li>
+    <p>Tegant is a transparent company that is up-front about who they are and what they do. You can quickly research where they’re located, what technology they use - and you can also get in touch with them effortlessly! Unlike many VPNs, which are hidden beneath pop-up laden websites and anonymous interfaces, Tegant has direct and quick customer service. It’s part of their commitment to being transparent and honest about who they are.</p>
+  </li>
+  <li>
+    <p>Tegant doesn’t give your data away. The withholding of your data is another security feature that, along with DNS leaks, is often forgotten - but makes many VPNs insecure. VPNs need to collect user data; otherwise, they can’t provide their services, nor protect their users from hackers. Tegant doesn’t deny this as other VPNs do - but they also commit to deleting all user data after ninety days, and to never pass your data along to anyone else. Together with their secure encryption and DNS leak-protection, this means that Tegant is one of the most secure VPNs out there.</p>
+  </li>
+</ul>
+
+<p>Did you know about DNS leaks? They’re an oft-forgotten component of online security and VPNs, but no less important when making sure your privacy online is full and secure. Now that you know, you also understand what you can do to prevent them from compromising your safety and privacy online - and getting <a href="https://tegant.com">Tegant</a> and its DNS leak protection is a great place to start.</p>
+
+<div class="fb-share-button" data-href="https://tegant.com/en/how-to-prevent-dns-leaks//" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftegant.com%2Fen%2Fhow-to-prevent-dns-leaks%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer>
+    
+    <p dir="ltr">&copy; 2019 Venus Cloud Ltd. All Rights Reserved.</p>
+    
+</footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/new-age/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/new-age/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/assets/new-age/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/new-age/js/new-age.min.js"></script>
+    <script src="/assets/new-age/js/custom.min.js"></script>
+
+  </body>
+
+</html>

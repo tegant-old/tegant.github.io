@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="generator" content="Jekyll v3.7.4"/>
+  
+  <meta name="description" content="اذ يقوم العديد من الأشخاص بحماية أنفسهم باستخدام الشبكات الخاصة الافتراضية او ما يعرف بالفي بي ان التي تخفي هويتهم وتحمي أنشطتهم على الإنترنت من الاخرين. ولكن هنالك خطر إضافي قد يحدث عند استخدام الفي بي ان وهو يطلق تسرب DNS.">
+  
+  
+  <meta name="keywords" content="dns كيف بإمكانك منع تسرب"/>
+  
+  <meta name="author" content="Sarah Merkel"/>
+  
+  <title>كيف بإمكانك منع تسرب DNS عند استخدام الفي بي ان</title>
+  
+  
+  <meta property="og:title" content="كيف بإمكانك منع تسرب DNS عند استخدام الفي بي ان"/>
+  <meta property="og:image" content="https://tegant.com/assets/post-img/tegant-dns-leak-prevention.jpg"/>
+  <meta property="og:url" content="https://tegant.com/ar/dns-كيف-بإمكانك-منع-تسرب"/>
+  <meta property="og:description" content="اذ يقوم العديد من الأشخاص بحماية أنفسهم باستخدام الشبكات الخاصة الافتراضية او ما يعرف بالفي بي ان التي تخفي هويتهم وتحمي أنشطتهم على الإنترنت من الاخرين. ولكن هنالك خطر إضافي قد يحدث عند استخدام الفي بي ان وهو يطلق تسرب DNS."/>
+  
+  <meta property="og:locale" content="ar"/>
+  <meta property="og:site_name" content="Tegant VPN"/>
+  <meta property="og:type" content="website"/>
+  <meta property="fb:app_id" content="235885337087643"/>
+  
+  <link rel="canonical" href="https://tegant.com/ar/dns-كيف-بإمكانك-منع-تسرب"/>
+  <script type="application/ld+json">
+    {
+      "name": "Tegant VPN",
+      "description": "في بي ان موثوق وسريع وأمن - في بي ان تيغانت هو اسم يمكنك الوثوق به.",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Merkel"
+      },
+      "@type": "WebSite",
+      "url": "https://tegant.com/ar/dns-كيف-بإمكانك-منع-تسرب",
+      "headline": "كيف بإمكانك منع تسرب DNS عند استخدام الفي بي ان",
+      "@context": "http://schema.org"
+    }
+  </script>
+  
+  <!-- End Jekyll SEO tag -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/new-age/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="/assets/new-age/vendor/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Markazi+Text" rel="stylesheet">
+  
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/new-age/vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="/assets/new-age/device-mockups/device-mockups.min.css">
+  <!-- Custom styles for this template -->
+  <link href="/assets/new-age/css/new-age.ar.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/new-age/css/custom.min.css">
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+  
+  <script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111928528-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAdgaen6O7">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAdgaen6O7">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAdgaen6O7" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAdgaen6O7">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "/ar/privacy"
+  }
+})});
+</script>
+
+</head>
+
+
+  <body id="page-top">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=235885337087643&autoLogAppEvents=1"></script>
+
+    <main class="page-content" aria-label="Content">
+
+        <div class="masthead-post">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-8 offset-lg-2 my-auto">
+                <article class="post h-entry article">
+                    <header class="post-header">
+                        <h1 class="post-title p-name">كيف بإمكانك منع تسرب DNS عند استخدام الفي بي ان</h1>
+                    </header>
+                    <div class="post-content e-content">
+                        <p><img src="/assets/post-img/dns-leak.jpg" alt="DNS Leak - like water leaking" class="img-responsive" />
+<sub>الصورة بواسطة June Wong</sub></p>
+
+<p>ان الانترنت مليء بالهاكرز، ومعلومات بطاقة الائتمان المسروقة، او المتصيدون، والقيود الجغرافية، والمحتوى المحظور، والرقابة على المواقع لذا فهو عبارة عن حقل ألغام. لهذا السبب من المهم حماية نفسك عند اتصالك بالأنترنت. اذ يقوم العديد من الأشخاص بحماية أنفسهم باستخدام الشبكات الخاصة الافتراضية او ما يعرف بالفي بي ان التي تخفي هويتهم وتحمي أنشطتهم على الإنترنت من الاخرين.</p>
+
+<p>ولكن هنالك خطر إضافي قد يحدث عند استخدام الفي بي ان وهو يطلق تسرب DNS. ما هي تسريبات DNS وكيف يمكنك منعها وضمان الخصوصية عبر الإنترنت عند استخدامك للفي بي ان.</p>
+
+<p><br /></p>
+
+<h3 id="أولاً-ما-هو-dns-وما-هو-تسرب-dns">أولاً: ما هو DNS؟ وما هو تسرب DNS؟</h3>
+<p>يعرف DNS بنظام اسم النطاق. إنه يشبه دفتر عناوين الإنترنت - تلك التي يستخدمها البشر. اذ ان كل “مكان” وموقع على الإنترنت لهما اسم مجال ونحن باستخدامها نستطيع البحث والوصول إليها. يقوم نظام DNS بتحويل المجالات إلى عناوين IP اذ ان متصفحات البحث تفضلها كهذا. يسهل DNS هذا على مستخدمي الانترنت اذ لا يتعين عليهم حفظ هذه العناوين الطويلة، مما يجعل الإنترنت أسهل استخداما. ان تسرب DNS هو امر يحدث لمستخدمي الفي بي ان. ان الغرض من الفي بي ان هو إنشاء “نفق” آمن تمر عبره بيانات المستخدم ونشاطه، بدلاً من أن تكشفلأي شخص اخر.</p>
+
+<p>ان تسرب DNS يحدث عندما تتم هنالك طلبات DNS عبر شبكة غير مجهولة من خلال نظام مزود خدمة الإنترنت (ISP) بدلاً من الفي بي ان الخاص بك وخوادم DNS المخصصة له.</p>
+
+<p>هذا التسريب يعني أن معظم نشاطك قد يتنقل عبر “نفق” الفي بي ان الخاص بك ولكن ليس طلب DNS. ستكون الأطراف الأخرى - مثل موفر خدمة الإنترنت الخاص بك قادرا على معرفة مواقع الويب التي قمت بزيارتها وقد يقوم مزود خدمة الإنترنت الخاص بك بتسجيل المواقع التي قمت بزيارتها ووضع خصوصيتك للخطر.</p>
+
+<p><br /></p>
+
+<h3 id="لماذا-يحدث-هذا">لماذا يحدث هذا؟</h3>
+<p>تحدث تسريبات DNS لعدة أسباب. احدى الاكثر الاسباب شيوعا هو اعدادات الفي بي ان الخاصة بك. اذ هذه الاعدادات قد تزيد من فرصة حدوث تسريب وذلك لأن الفي بي ان لن يستخدم الإعدادات المثالية - أو برنامج الحماية من تسرب DNS والذي سنتحدث عنه أدناه من اجل منع تسرب DNS.</p>
+
+<p>سبب آخر لحدوث هذا هو اعداد DNS اذ هذا النوع من الإعدادات يتم عندما يكون المستخدم قد قام بتغيير الإعدادات لجعل DNS ينتقل عبر خادم DNS غير مجهول مثل جوجل أو خادم DNS الداخلي لمزود خدمة الإنترنت اذ ان كلاهما يعد كخيارات سيئة لإخفاء الهوية.</p>
+
+<p>آخرها هو الهجمات الخبيثة اذ انه من المحتمل أن تحدث هذه على شبكات غير آمنة، كما هو الحال في المقاهي أو الأماكن العامة الأخرى ويصل الهاكر إلى جهازك ويعيد توجيه طلبات DNS الخاصة بك إلى خادم DNS ضار لتسجيل أنشطتك.</p>
+
+<p>للحفاظ على الأنشطة الخاصة بك على الإنترنت من أعين المتطفلين، عليك توجيه جميع الحركات الخاصة بك بما في ذلك طلبات DNS من جهازك إلى خادم الفي بي ان. اذ ان طلبات DNS يجب أن تمر عبر “نفق” الفي بي ان إلى خوادم DNS لمزود الفي بي ان الخاص بك وليس عبر DNS الخاص بخادم مزود الخدمة.</p>
+
+<p><br /></p>
+
+<h3 id="هل-يمكن-اصلاحها">هل يمكن اصلاحها؟</h3>
+
+<p>نعم! لحسن الحظ، تعتبر تسريبات DNS مشكلة قابلة للحل. ان الخطوة الأولى هي إجراء اختبار تسرب DNS اذ ان هنالك عدد كبير من المواقع سوف تنجز هذه الخدمة بسرعة وفعالية، مثل <a href="https://dnsleaktest.com" rel="nofollow">dnsleaktest.com</a> أو <a href="https://ipleak.net" rel="nofollow">ipleak.net</a>.</p>
+
+<p>أولاً، اتصل بشبكة الفي بي ان الحالية (إذا كان لديك واحدة؛ اما إذا لم يكن لديك، فلا تقلق بشأن هذه الخطوة) ثم قم بإجراء اختبار التسرب. إذا كان لديك تسرب: هنالك طريقة واحدة لحلها تتطلب تغيير إعدادات وتكوين جهاز الكمبيوتر ونظام التشغيل لمنع طلبات DNS الخاصة بك من أن يتم تسريبها إلى الخارج. ان هذه الطريقة محتملة، ولكن هنالك طريقة أسهل بكثير (على المدى الطويل، نظرًا لأنه يغطي الثغرات الأمنية الأخرى اي طريقة أكثر أمانًا): وهي استخدام الفي بي ان الذي يوفر ميزة الحماية من تسرب DNS.</p>
+
+<p><img src="/assets/post-img/tegant-dns-leak-prevention.jpg" alt="Tegant DNS Leak Prevention - Man looking exposed" class="img-responsive" />
+<sub>الصورة بواسطة Tom Sodoge</sub></p>
+
+<h3 id="أي-في-بي-ان-يأتي-مع-حماية-لتسرب-dns">أي في بي ان يأتي مع حماية لتسرب DNS؟</h3>
+<p>أحد أهم الفي بي ان هو تيغانت، الذي يأتي مع ميزة منع تسرب DNS ضمن حزمة الأمان الخاصة بها. اذ انه ليس من المنطقي استخدام الفي بي الذي لا يحمي هويتك بالكامل. تدرك شركة تيغانت ذلك، وتتضمن حزمة الأمان الخاصة بها حماية ضد تسرب DNS. ولكن ميزة الحماية هي مجرد جزء من خدمة الفي بي ان المقدمة من قبل تيغانت. وهذا يعني أنه عند استخدامك تيغانت لتصفح الويب، فأنت محمي تمامًا - على عكس بعض شبكات الفي بي ان الأخرى التي ترسل في معظم البيانات الخاصة بك من خلال شبكتهم الآمنة، ولكن لا توفر اي حماية لتسريبات DNS. ان الوقاية من تسرب DNS من خلال تيغانت تعد سهلة الاستخدام وموثوقة وفعالة. اذ عند تشغيل تيغانت، يمكنك التأكد من أن هذه الفجوة التي يتم استغلالها في كثير من الأحيان في العديد من دفاعات الفي بي ان محمية.</p>
+
+<p><br /></p>
+
+<h3 id="إذن-شبكات-الفي-بي-ان-الأخرى-لا-تمنع-تسرب-dns-كيف-يختلف-تيغانت-عن-شبكات-الفي-بي-ان-الأخرى">إذن شبكات الفي بي ان الأخرى لا تمنع تسرب DNS؟ كيف يختلف تيغانت عن شبكات الفي بي ان الأخرى؟</h3>
+<p>تيغانت عبارة عن في بي ان مصمم من قبل مهندسي برامج رائعين تم تصميمها ليستخدمها أناس حقيقيون. هذه هي بعض الميزات الرائعة الأخرى التي لديهم:</p>
+
+<ul>
+  <li>
+    <p>تيغانت لديه إصدار غير مدفوع يمكن الوصول إليه فقط من خلال مشاهدة الإعلان بين الحين والاخر اذ تحتوي معظم شبكات الفي بي ان المجانية الأخرى على حدود للبيانات أو تقيد وصولك إليها الا اذ قمت بالدفع، ولكن تيغانت يتيح لك تصفح بأقصى سرعة.</p>
+  </li>
+  <li>
+    <p>ان الحماية من تسرب DNS المقدم من تيغانت يعد جزء من حزمة أكبر للأمن الكلي التي تعتمد على التكنولوجيا المتطورة والحديثة. اذ ان جميع برامج تيغانت تستخدم أحدث التقنيات المتاحة، كما هو الحال في تشفيرها مقارنة مع الفي بي ان الأخرى التي تستخدم طرق تشفير قديمة واقل امانا.</p>
+  </li>
+  <li>
+    <p>شركة تيغانت هي شركة شفافة تبين من هم وماذا يفعلون اذ يمكنك البحث بسرعة عن مكان تواجدهم والتكنولوجيا التي يستخدمونها ويمكنك أيضًا التواصل معهم دون عناء! على عكس العديد من الشبكات الافتراضية الخاصة، والتي هي مخبأة تحت مواقع انترنت اخرى وواجهات مجهولة، بالإضافة الى ان تيغانت تقدم خدمة عملاء مباشرة وسريعة اذ إنه جزء من التزامهم بالشفافية والصدق حول من هم.</p>
+  </li>
+  <li>
+    <p>تيغانت لا يقدم البيانات الخاصة بك لأي أحد اذ ان حجب البيانات الخاصة بك هي ميزة اخرى إلى جانب منع تسرب DNS التي يتم غالباً نسيانها ولكنها هي التي تجعل الشبكات الافتراضية الخاصة غير آمنة. ان شبكات الفي بي ان تحتاج إلى جمع بيانات المستخدم من اجل تقديم الخدمات وحماية مستخدميها من الهاكرز. ان تيغانت لا ينكر هذا على أنه جزء آخر مثل شبكات الفي بي ان الاخرى ولكنها تلتزم أيضًا بحذف جميع بيانات المستخدم بعد تسعين يومًا وان لا تقوم أبداً بتزويد بياناتك إلى أي شخص آخر. السرية والخصوصية بالإضافة الى تشفير آمن بهم والحماية من تسرب DNS يجعل تيغانت احدى أفضل شبكات الفي بي ان الأكثر أمانًا.</p>
+  </li>
+</ul>
+
+<p>هل كنت تعلم عن تسرب DNS؟ انه امر يتم نسيانه في الأمان عبر الإنترنت وشبكات الفي بي ان، ولكنه ليس أقل أهمية للتأكد من أن خصوصيتك على الإنترنت محمية وآمنة. الآن بعد ان عرفت، أنت تفهم أيضًا ما بأماكنك فعله للحصول على الخصوصية والامان على الإنترنت – وذلك من خلال حصولك على <a href="https://tegant.com">تيغانت</a> وميزة الحماية من تسرب DNS الخاص بك هي خطوة البداية الافضل.</p>
+
+<div class="fb-share-button" data-href="https://tegant.com/ar/dns-كيف-بإمكانك-منع-تسرب/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftegant.com%2Far%2Fdns-%D9%83%D9%8A%D9%81-%D8%A8%D8%A5%D9%85%D9%83%D8%A7%D9%86%D9%83-%D9%85%D9%86%D8%B9-%D8%AA%D8%B3%D8%B1%D8%A8%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer>
+    
+    <p dir="ltr">&copy; 2019 Venus Cloud Ltd. All Rights Reserved.</p>
+    
+</footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/new-age/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/new-age/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/assets/new-age/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/new-age/js/new-age.min.js"></script>
+    <script src="/assets/new-age/js/custom.ar.min.js"></script>
+
+  </body>
+
+</html>

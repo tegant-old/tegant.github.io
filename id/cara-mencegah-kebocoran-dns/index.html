@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="id">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="generator" content="Jekyll v3.7.4"/>
+  
+  <meta name="description" content="Bagaimana pun, ada risiko tambahan yang menyertai penggunaan VPN. Itu adalah apa yang disebut sebagai kebocoran DNS.">
+  
+  
+  <meta name="keywords" content="cara mencegah kebocoran dns"/>
+  
+  <meta name="author" content="Sarah Merkel"/>
+  
+  <title>Cara mencegah kebocoran DNS saat menggunakan VPN</title>
+  
+  
+  <meta property="og:title" content="Cara mencegah kebocoran DNS saat menggunakan VPN"/>
+  <meta property="og:image" content="https://tegant.com/assets/post-img/tegant-dns-leak-prevention.jpg"/>
+  <meta property="og:url" content="https://tegant.com/id/cara-mencegah-kebocoran-dns/"/>
+  <meta property="og:description" content="Bagaimana pun, ada risiko tambahan yang menyertai penggunaan VPN. Itu adalah apa yang disebut sebagai kebocoran DNS."/>
+  
+  <meta property="og:locale" content="id"/>
+  <meta property="og:site_name" content="Tegant VPN"/>
+  <meta property="og:type" content="website"/>
+  <meta property="fb:app_id" content="235885337087643"/>
+  
+  <link rel="canonical" href="https://tegant.com/id/cara-mencegah-kebocoran-dns/"/>
+  <script type="application/ld+json">
+    {
+      "name": "Tegant VPN",
+      "description": "Andal, Cepat, dan Aman - VPN Tegant adalah nama yang terpercaya.",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Merkel"
+      },
+      "@type": "WebSite",
+      "url": "https://tegant.com/id/cara-mencegah-kebocoran-dns/",
+      "headline": "Cara mencegah kebocoran DNS saat menggunakan VPN",
+      "@context": "http://schema.org"
+    }
+  </script>
+  
+  <!-- End Jekyll SEO tag -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/new-age/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+
+  <!-- Custom fonts for this template -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/new-age/vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="/assets/new-age/device-mockups/device-mockups.min.css">
+  <!-- Custom styles for this template -->
+  <link href="/assets/new-age/css/new-age.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/new-age/css/custom.min.css">
+  <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+  
+  <script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111928528-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAdgaen6O7">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAdgaen6O7">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAdgaen6O7" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAdgaen6O7">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "/id/privacy"
+  }
+})});
+</script>
+
+</head>
+
+
+  <body id="page-top">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2&appId=235885337087643&autoLogAppEvents=1"></script>
+
+    <main class="page-content" aria-label="Content">
+
+        <div class="masthead-post">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-8 offset-lg-2 my-auto">
+                <article class="post h-entry article">
+                    <header class="post-header">
+                        <h1 class="post-title p-name">Cara mencegah kebocoran DNS saat menggunakan VPN</h1>
+                    </header>
+                    <div class="post-content e-content">
+                        <p><img src="/assets/post-img/dns-leak.jpg" alt="DNS Leak - like water leaking" class="img-responsive" />
+<sub>Foto: June Wong</sub></p>
+
+<p>Para peretas, informasi kartu kredit curian, troll, pembatasan geografis, konten yang diblokir, situs yang disensor – membuat internet seperti sebuah ladang ranjau saja. Itulah mengapa sangat penting untuk melindungi diri sendiri saat Anda sedang online. Banyak orang melakukan pengamanan dengan menggunakan VPN (Virtual Private Networks) yang menyembunyikan identitas dan menjaga aktivitas online mereka tetap anonim.</p>
+
+<p>Bagaimana pun, ada risiko tambahan yang menyertai penggunaan VPN. Itu adalah apa yang disebut sebagai kebocoran DNS. Mari kita bahas kebocoran DNS dan bagaimana Anda dapat mencegahnya dan menjamin privasi online Anda saat menggunakan VPN.</p>
+
+<p><br /></p>
+
+<h3 id="pertama-tama-apa-itu-dns-lebih-jauh-apa-itu-kebocoran-dns">Pertama-tama: Apa itu DNS? Lebih jauh, apa itu kebocoran DNS?</h3>
+<p>DNS adalah singkatan dari Domain Name System. DNS ini seperti buku alamat di internet – yang digunakan manusia. Setiap ‘tempat’ dan situs di Internet memiliki nama domain, yang kita gunakan untuk menemukan dan mengaksesnya. Sistem DNS menerjemahkan domain menjadi alamat IP. Browser dan mesin lebih nyaman dengan alamat IP tersebut. DNS membuatnya sehingga pengguna internet awam tidak perlu menghafal alamat IP yang panjang, sehingga internet menjadi sangat lebih mudah digunakan. Kebocoran DNS adalah sesuatu yang terjadi pada pengguna VPN. Tujuan dari VPN adalah untuk membuat ‘terowongan’ yang aman tempat data dan aktivitas pengguna melintas, dan bukannya menjadikan informasi tersebut terbuka bagi siapa pun yang melihatnya.</p>
+
+<p>Kebocoran DNS terjadi saat permintaan DNS dilakukan melalui jaringan non-anonim Internet Service Provider (ISP atau Penyedia Layanan Internet) Anda dan bukannya melalui VPN dan dedicated server DNS.</p>
+
+<p>Kebocoran ini berarti bahwa sebagian besar aktivitas Anda mungkin bergerak melalui terowongan VPN Anda, namun tidak untuk masing-masing permintaan DNS. Pihak lain – seperti ISP Anda – akan dapat melihat situs web mana yang telah Anda kunjungi. ISP Anda dapat merekam situs yang telah Anda kunjungi dan membahayakan privasi Anda.</p>
+
+<p><br /></p>
+
+<h3 id="mengapa-ini-terjadi">Mengapa ini terjadi?</h3>
+<p>Kebocoran DNS terjadi karena beberapa alasan. Salah satu yang paling umum adalah konfigurasi manual VPN Anda. Konfigurasi ini membuat peluang DNS bocor lebih tinggi, karena VPN tidak menggunakan pengaturan ideal - atau karena lemahnya perangkat lunak bawaan untuk perlindungan kebocoran DNS, yang akan kita bicarakan di bawah ini - untuk mencegah kebocoran DNS.</p>
+
+<p>Alasan lain adalah konfigurasi DNS manual. Jenis konfigurasi ini dipakai ketika pengguna mengubah pengaturan agar DNS melalui server DNS non-anonim seperti Google atau server DNS internal ISP. Keduanya adalah pilihan yang buruk untuk anonimitas.</p>
+
+<p>Alasan lain lagi adalah serangan berbahaya. Ini lebih cenderung terjadi pada jaringan tidak aman, seperti di kafe atau tempat umum lainnya. Penyerang mengakses perangkat Anda dan mengarahkan ulang permintaan DNS Anda ke server DNS berbahaya untuk mencatat aktivitas Anda.</p>
+
+<p>Untuk menjaga aktivitas online dari mata-mata yang mengawasi tanpa Anda sadari, Anda harus merutekan semua lalu lintas Anda – termasuk permintaan DNS – dari perangkat Anda ke server VPN. Permintaan DNS harus melalui terowongan VPN ke server DNS penyedia VPN Anda dan tidak boleh melalui DNS server milik ISP Anda.</p>
+
+<p><br /></p>
+
+<h3 id="bisakah-itu-diperbaiki">Bisakah itu diperbaiki?</h3>
+<p>Ya! Untungnya, kebocoran DNS adalah masalah yang bisa dipecahkan. Langkah pertama adalah melakukan uji kebocoran DNS - ada banyak situs di luar sana dengan layanan cepat dan gratis, seperti <a href="https://dnsleaktest.com" rel="nofollow">dnsleaktest.com</a> atau <a href="https://ipleak.net" rel="nofollow">ipleak.net</a>.</p>
+
+<p>Pertama, sambungkan VPN Anda saat ini (jika Anda memilikinya; jika tidak, lewati langkah ini) dan kemudian lakukan tes kebocoran. Jika Anda memiliki kebocoran: satu cara untuk menyelesaikannya adalah memainkan pengaturan dan konfigurasi komputer dan sistem operasi Anda untuk mencegah permintaan DNS Anda bocor ke dunia luar. Pendekatan ini adalah sebuah alternatif, tetapi ada metode yang jauh lebih mudah (dan dalam jangka panjang, karena mencakup celah keamanan lainnya, jauh lebih aman) yaitu: menggunakan VPN yang memiliki fitur perlindungan kebocoran DNS.</p>
+
+<p><img src="/assets/post-img/tegant-dns-leak-prevention.jpg" alt="Tegant DNS Leak Prevention - Man looking exposed" class="img-responsive" />
+<sub>Photo by Tom Sodoge</sub></p>
+
+<p><br /></p>
+
+<h3 id="vpn-mana-yang-dilengkapi-dengan-perlindungan-kebocoran-dns">VPN mana yang dilengkapi dengan perlindungan kebocoran DNS?</h3>
+<p>Salah satu pemain VPN yang signifikan adalah Tegant, yang dilengkapi dengan fitur pencegahan kebocoran DNS yang melengkapi paket keamanannya. Tidak masuk akal menggunakan VPN – apalagi berbayar – jika mereka tidak sepenuhnya melindungi anonimitas Anda.</p>
+
+<p>Tegant paham tentang hal ini, dan paket keamanannya sudah termasuk perlindungan kebocoran DNS. Apalagi, fitur perlindungan itu sendiri adalah bagian dari layanan Tegant VPN. Itu artinya kapan pun Anda menggunakan Tegant dan mengakses sebuah situs, Anda terlindungi sepenuhnya - tidak seperti beberapa VPN lain yang mengirim sebagian besar data Anda melalui jaringan aman mereka, tetapi masih membuat Anda terpapar melalui kebocoran DNS. Pencegahan kebocoran DNS Tegant mudah digunakan, andal, dan efektif. Ketika Anda menghidupkan Tegant, Anda akan teryakinkan bahwa celah yang sering dieksploitasi di banyak pertahanan VPN ini aman terlindungi.</p>
+
+<p><br /></p>
+
+<h3 id="jadi-vpn-lain-tidak-mencegah-kebocoran-dns-apa-bedanya-tegant-berbeda-dari-vpn-lain">Jadi VPN lain tidak mencegah kebocoran DNS? Apa bedanya Tegant berbeda dari VPN lain?</h3>
+<p>Tegant adalah VPN yang dibuat oleh engineer perangkat lunak hebat yang dirancang untuk digunakan oleh pengguna manusia. Berikut adalah beberapa fitur keren lainnya yang mereka miliki:</p>
+<ul>
+  <li>
+    <p>Tegant memiliki versi tidak berbayar yang dapat diakses hanya dengan menonton iklan sekarang dan nanti. Sebagian besar VPN gratis lainnya memiliki batasan data atau membatasi akses Anda untuk mendapatkannya Anda membayar, tetapi Tegant memungkinkan Anda menjelajah dengan kecepatan penuh, apa pun yang terjadi.</p>
+  </li>
+  <li>
+    <p>Perlindungan kebocoran DNS bawaan Tegant adalah bagian dari paket keamanan total yang lebih besar yang dihasilkan dari teknologi mutakhirnya. Semua perangkat lunak Tegant menggunakan teknologi tercanggih yang tersedia, seperti yang diterapkan pada enkripsi mereka - VPN lain menggunakan metode enkripsi yang ketinggalan jaman dan kurang aman.</p>
+  </li>
+  <li>
+    <p>Tegant adalah perusahaan yang transparan tentang siapa mereka dan apa yang mereka lakukan. Anda dapat dengan cepat mengetahui di mana mereka berada, teknologi apa yang mereka gunakan - dan Anda juga dapat menghubungi mereka dengan mudah! Tidak seperti banyak VPN lainnya yang tersembunyi di bawah situs web penuh pop-up dan antarmuka anonim, Tegant memiliki layanan pelanggan langsung dan cepat. Itu adalah bagian dari komitmen mereka untuk menjadi transparan dan jujur ​​tentang siapa mereka.</p>
+  </li>
+  <li>
+    <p>Tegant tidak membagikan data Anda. Penyembunyian data Anda adalah fitur keamanan yang, bersama dengan kebocoran DNS, sering dilupakan - tetapi akibatnya menghasilkan banyak VPN yang tidak aman. VPN perlu mengumpulkan data pengguna; jika tidak, mereka tidak dapat menyediakan layanan dan tidak dapat melindungi pengguna mereka dari peretas. Tegant tidak menyangkal ini sebagaimana  VPN yang lain melakukannya - tetapi Tegant berkomitmen untuk menghapus semua data pengguna setelah sembilan puluh hari, dan untuk tidak pernah mengirimkan data Anda kepada orang lain. Bersama dengan enkripsi aman mereka dan perlindungan kebocoran DNS, ini berarti Tegant adalah salah satu VPN yang paling aman di luar sana.</p>
+  </li>
+</ul>
+
+<p>Apakah Anda tahu tentang kebocoran DNS? Itu adalah komponen yang sering dilupakan saat orang berbicara tentang keamanan online dan VPN, namun yang tidak kalah pentingnya adalah untuk memastikan privasi online Anda penuh dan aman. Sekarang karena Anda telah mengetahui kebocoran DNS, Anda juga paham apa yang dapat Anda lakukan untuk mencegah mereka mengkompromikan keamanan dan privasi online Anda – dan menggunakan <a href="https://tegant.com">Tegant</a> serta perlindungan kebocoran DNS-nya adalah sesuatu yang tepat sebagai permulaan.</p>
+
+<div class="fb-share-button" data-href="https://tegant.com/id/cara-mencegah-kebocoran-dns//" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftegant.com%2Fid%2Fcara-mencegah-kebocoran-dns%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+                    </div>
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer>
+    
+    <p dir="ltr">&copy; 2019 Venus Cloud Ltd. All Rights Reserved.</p>
+    
+</footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/new-age/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/new-age/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/assets/new-age/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/new-age/js/new-age.min.js"></script>
+    <script src="/assets/new-age/js/custom.id.min.js"></script>
+
+  </body>
+
+</html>
