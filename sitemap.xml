@@ -1,28 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://tegant.com/en/blog/2019/05/25/our-journey-begins.html</loc>
-<lastmod>2019-05-25T00:00:00+01:00</lastmod>
-</url>
-<url>
-<loc>https://tegant.com/en/best-free-vpn/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/blog/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/how-to-prevent-dns-leaks/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/privacy-policy/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/terms-conditions/</loc>
-</url>
-<url>
-<loc>https://tegant.com/en/unblock-youtube/</loc>
-</url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://tegant.com/en/blog/2019/05/25/our-journey-begins.html</loc>
+        <lastmod>2019-05-25T00:00:00+01:00</lastmod>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/best-free-vpn/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/blog/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/how-to-prevent-dns-leaks/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/privacy-policy/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/terms-conditions/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/en/unblock-youtube/</loc>
+    </url>
+    <url>
+        <loc>
+            https://tegant.com/ar/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D9%8A%D8%BA%D8%A7%D9%86%D8%AA-%D9%87%D9%88-%D8%A3%D9%81%D8%B6%D9%84-%D9%81%D9%8A-%D8%A8%D9%8A-%D8%A7%D9%86-%D9%85%D8%AC%D8%A7%D9%86%D9%8A/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://tegant.com/ar/dns-%D9%83%D9%8A%D9%81-%D8%A8%D8%A5%D9%85%D9%83%D8%A7%D9%86%D9%83-%D9%85%D9%86%D8%B9-%D8%AA%D8%B3%D8%B1%D8%A8/
+        </loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/ar/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/ar/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9/
+        </loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/ar/%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7-%D8%A7%D9%84%D8%A3%D8%AD%D9%83%D8%A7%D9%85/
+        </loc>
+    </url>
+    <url>
+        <loc>
+            https://tegant.com/ar/%D9%85%D8%B4%D8%A7%D9%87%D8%AF%D8%A9-%D8%A7%D9%84%D9%85%D8%AD%D8%B8%D9%88%D8%B1-%D8%B9%D9%84%D9%89-%D9%8A%D9%88%D8%AA%D9%8A%D9%88%D8%A8/
+        </loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/vpn-gratis-terbaik/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/cara-mencegah-kebocoran-dns/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/kebijakan-privasi/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/syarat-ketentuan/</loc>
+    </url>
+    <url>
+        <loc>https://tegant.com/id/buka-blokir-youtube/</loc>
+    </url>
+
 </urlset>
