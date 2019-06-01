@@ -1,7 +1,7 @@
 {
     "title": "New Age",
     "name": "startbootstrap-new-age",
-    "version": "5.0.4",
+    "version": "5.0.5",
     "scripts": {
         "start": "gulp watch"
     },
@@ -31,8 +31,10 @@
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.8.2",
         "bootstrap": "4.3.1",
+        "gulp-csso": "^3.0.1",
         "jquery": "3.4.1",
         "jquery.easing": "^1.4.1",
+        "popper.js": "^1.15.0",
         "simple-line-icons": "2.4.1"
     },
     "devDependencies": {
@@ -46,6 +48,6 @@
         "gulp-rename": "1.4.0",
         "gulp-sass": "^4.0.2",
         "gulp-uglify": "3.0.2",
-        "merge-stream": "^1.0.1"
+        "merge-stream": "2.0.0"
     }
 }

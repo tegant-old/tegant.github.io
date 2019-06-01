@@ -1,6 +1,7 @@
 "use strict";
 
 // Load plugins
+const { src, dest, parallel } = require('gulp');
 const autoprefixer = require("gulp-autoprefixer");
 const browsersync = require("browser-sync").create();
 const cleanCSS = require("gulp-clean-css");
@@ -116,20 +117,42 @@ function js() {
     .pipe(browsersync.stream());
 }
 
+function css_custom() {
+  return gulp.src('./css/custom.css')
+    .pipe(cleanCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(dest('./css'))
+}
+
+function css_ar() {
+  return gulp.src('./css/new-age.ar.css')
+    .pipe(cleanCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(dest('./css'))
+}
+
 // Watch files
 function watchFiles() {
   gulp.watch("./scss/**/*", css);
-  gulp.watch("./js/**/*", js);
+  gulp.watch(["./js/**/*", "!./js/**/*.min.js"], js);
   gulp.watch("./**/*.html", browserSyncReload);
 }
 
+//gulp.task('css', ['css:minify']);
+
 // Define complex tasks
-const vendor = gulp.series(clean, modules);
-const build = gulp.series(vendor, gulp.parallel(css, js));
+const vendor = gulp.series(modules);
+const build = gulp.series(vendor, gulp.parallel(css, js, css_custom, css_ar));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
 exports.css = css;
+exports.css_custom = css_custom;
+exports.css_ar = css_ar;
 exports.js = js;
 exports.clean = clean;
 exports.vendor = vendor;
