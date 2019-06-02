@@ -117,6 +117,15 @@ function js() {
     .pipe(browsersync.stream());
 }
 
+function css_404() {
+  return gulp.src('./css/404.css')
+    .pipe(cleanCSS())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(dest('./css'))
+}
+
 function css_custom() {
   return gulp.src('./css/custom.css')
     .pipe(cleanCSS())
@@ -146,7 +155,7 @@ function watchFiles() {
 
 // Define complex tasks
 const vendor = gulp.series(modules);
-const build = gulp.series(vendor, gulp.parallel(css, js, css_custom, css_ar));
+const build = gulp.series(vendor, gulp.parallel(css, js, css_custom, css_ar, css_404));
 const watch = gulp.series(build, gulp.parallel(watchFiles, browserSync));
 
 // Export tasks
