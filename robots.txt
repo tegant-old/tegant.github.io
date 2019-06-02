@@ -1,1 +1,10 @@
+User-agent: *
+Disallow: /privacy/
+Disallow: /terms/
+Disallow: /en/privacy/
+Disallow: /ar/privacy/
+Disallow: /id/privacy
+Disallow: /en/terms/
+Disallow: /ar/terms/
+Disallow: /id/terms/
 Sitemap: https://tegant.com/sitemap.xml
