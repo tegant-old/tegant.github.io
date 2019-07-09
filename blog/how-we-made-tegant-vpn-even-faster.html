@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <meta name="generator" content="Jekyll v3.7.4"/>
+  
+  <meta name="description" content="Get free access to blocked websites and services on your iPhone or iPad - anytime, anywhere."/>
+  
+  
+  <meta name="keywords" content=""/>
+  
+  <meta name="author" content="Sarah Merkel"/>
+  
+  <title>Tegant VPN | Reliable, Fast, and Secure</title>
+  
+  
+  
+<meta property="og:title" content="How We Made Tegant VPN Even Faster"/>
+<meta property="og:image" content="https://tegant.com/assets/post-img/faster-vpn.jpg"/>
+<meta property="og:url" content="https://tegant.com/blog/how-we-made-tegant-vpn-even-faster.html"/>
+<meta property="og:description" content="Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing they praise us for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:site" content="@TegantVPN"/>
+<meta name="twitter:creator" content="@TegantVPN"/>
+<meta name="twitter:title" content="How We Made Tegant VPN Even Faster"/>
+<meta name="twitter:description" content="Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing they praise us for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!"/>
+<meta name="twitter:image" content="https://tegant.com/assets/post-img/faster-vpn.jpg"/>
+
+  
+  <meta property="og:locale" content="en"/>
+  <meta property="og:site_name" content="Tegant VPN"/>
+  <meta property="og:type" content="website"/>
+  <meta property="fb:app_id" content="235885337087643"/>
+  
+  <script type="application/ld+json">
+    {
+      "name": "Tegant VPN",
+      "description": "Reliable, Fast, and Secure - Tegant VPN is a name you can trust.",
+      "author": {
+        "@type": "Person",
+        "name": "Sarah Merkel"
+      },
+      "@type": "WebSite",
+      "url": "https://tegant.com",
+      "headline": "Tegant VPN",
+      "@context": "http://schema.org"
+    }
+  </script>
+  
+  <!-- End Jekyll SEO tag -->
+
+  <!-- Bootstrap core CSS -->
+  <link href="/assets/new-age/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+
+  <!-- Custom fonts for this template -->
+  <link href="/assets/new-age/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/new-age/vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <!-- Plugin CSS -->
+  <link rel="stylesheet" href="/assets/new-age/device-mockups/device-mockups.min.css">
+  <!-- Custom styles for this template -->
+  <link href="/assets/new-age/css/new-age.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/new-age/css/custom.min.css">
+  
+  <script>
+if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-111928528-1', 'auto');
+  ga('send', 'pageview');
+}
+</script>
+<script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAdgaen6O7">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAdgaen6O7">
+  <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAdgaen6O7">
+  <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAdgaen6O7" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAdgaen6O7">
+  <meta name="msapplication-TileColor" content="#603cba">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.css" />
+<script async defer src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.2/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#424242"
+    },
+    "button": {
+      "background": "#2a7ae2"
+    }
+  },
+  "content": {
+    "href": "/en/privacy-policy"
+  }
+})});
+</script>
+
+</head>
+
+
+  <body id="page-top">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.3&appId=235885337087643&autoLogAppEvents=1"></script>
+
+    <main class="page-content" aria-label="Content">
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand js-scroll-trigger" href="#" onclick="window.history.back();return false;"><i class="fas fa-arrow-left"></i></a>
+  </div>
+</nav>
+<div class="masthead-post">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-8 offset-lg-2 my-auto">
+                <article class="post h-entry article" itemscope itemtype="http://schema.org/BlogPosting">
+
+                    <header class="post-header">
+                        <h1 class="post-title p-name" itemprop="name headline">How We Made Tegant VPN Even Faster</h1>
+                        <p class="post-meta">
+                            
+                        </p>
+                    </header>
+
+                    <div class="post-content e-content" itemprop="articleBody">
+                        <p>Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing they praise us for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!</p>
+
+<!--more-->
+
+<p><img src="/assets/post-img/faster-vpn.jpg" alt="Faster VPN" />
+<sub>Photo by Lucas França</sub></p>
+
+<p>At first, it seemed very challenging to see what else we could do to make Tegant even faster than it already is. We knew that every time a user taps on the connect button, we had to connect to the central server first to run some checks. Moreover, the central server isn’t always located in the same region as the VPN server itself. Hence depending on the location of the user, this can slow down the process by a couple of seconds.</p>
+
+<p>So we came up with an idea how to solve this. As long as the user has valid access, there should be no further need to call the central server.</p>
+
+<h2 id="what-is-valid-access">What is valid access?</h2>
+
+<p>The following three bullet points show the cases for valid access.</p>
+
+<ul>
+  <li>
+    <p>Free users get a seven day grace period upon signup, where they can use the app completely uninterrupted. They can connect to the VPN without having to authenticate with the central server.</p>
+  </li>
+  <li>
+    <p>Free users that have finished the grace period would have to watch an advertisement video to get free credits. This is the only time they make an actual call to the central server.
+Any further attempt to connect to the VPN is made without having to contact the central server. Of course, this is as long as the app hasn’t run out of free credits.</p>
+  </li>
+  <li>
+    <p>Premium users with a valid subscription won’t have to do a round-trip to the central server anymore before connecting to the VPN. After the VPN connection has been established, there is a non-intrusive background call to the central server to check the validity of the subscription. This approach ensures that we can deal with any issue with the subscription.</p>
+  </li>
+</ul>
+
+<p>This new method makes <a href="https://tegant.com">Tegant VPN</a> much snappier when it comes to connecting to the VPN servers. In a nutshell, the background checks are deferred to a later stage. Hence the user enjoys an instant connection.</p>
+
+<p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comment section below.</p>
+
+                    </div>
+
+                    <div class="container" id="social-media-share">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+            <div class="fb-share-button" data-href="https://tegant.com/blog/how-we-made-tegant-vpn-even-faster.html" data-layout="button"
+                 data-size="large"><a target="_blank"
+                                      href="https://www.facebook.com/sharer/sharer.php?u=https://tegant.com/blog/how-we-made-tegant-vpn-even-faster.html&amp;src=sdkpreparse"
+                                      class="fb-xfbml-parse-ignore" rel="nofollow">Share</a></div>
+        </div>
+        <div class="col-sm">
+            <a href="https://twitter.com/intent/tweet?text=Look%20what%20I%20found%20here%3A&url=https://tegant.com/blog/how-we-made-tegant-vpn-even-faster.html&hashtags=vpn,iphone,ipad"
+               class="twitter-share-button" data-size="large" data-show-count="false" rel="nofollow">Tweet</a>
+            <script async src="https://platform.twitter.com/widgets.js"></script>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+
+                    <hr>
+                    <br>
+
+                    
+                    
+
+  <div class="disqus"></div>
+
+
+
+                    
+
+                </article>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+    </main>
+
+    <footer>
+    
+    <p dir="ltr">&copy; 2019 Venus Cloud Ltd. All Rights Reserved.</p>
+    
+</footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/assets/new-age/vendor/jquery/jquery.min.js"></script>
+    <script src="/assets/new-age/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/assets/new-age/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/assets/new-age/js/new-age.min.js"></script>
+    <script src="/assets/new-age/js/custom.min.js"></script>
+
+    
+    <script src="/assets/new-age/js/jquery.disqusloader.min.js"></script>
+    <script>$.disqusLoader( '.disqus', { scriptUrl: '//tegant-vpn.disqus.com/embed.js' });</script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    
+
+  </body>
+
+</html>
