@@ -162,9 +162,9 @@ window.cookieconsent.initialise({
 
 <p>So we came up with an idea how to solve this. As long as the user has valid access, there should be no further need to call the central server.</p>
 
-<h2 id="what-is-valid-access">What is valid access?</h2>
+<h2 id="reduced-the-validation-calls-to-the-central-server">Reduced the validation calls to the central server</h2>
 
-<p>The following three bullet points show the cases for valid access.</p>
+<p>The following three bullet points define when your access counts as valid:</p>
 
 <ul>
   <li>
@@ -180,6 +180,12 @@ Any further attempt to connect to the VPN is made without having to contact the 
 </ul>
 
 <p>This new method makes <a href="https://tegant.com">Tegant VPN</a> much snappier when it comes to connecting to the VPN servers. In a nutshell, the background checks are deferred to a later stage. Hence the user enjoys an instant connection.</p>
+
+<h2 id="relocated-the-central-server-to-germanyfrankfurt">Relocated the central server to Germany/Frankfurt</h2>
+
+<p>In the previous section, we discussed how to reduce the calls to the central server. However, we can still make the remaining mandatory calls faster as well.</p>
+
+<p>The API was previously located in Sweden. While Stockholm is a beautiful city, it is a bit too far up in the north.  Based on the last 30 days usage, we realised that relocating the central server to Germany/Frankfurt makes more sense. For the majority of our users, this would lessen their distance to the central server and hence it would speed up the connection speed even more.</p>
 
 <p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comment section below.</p>
 
