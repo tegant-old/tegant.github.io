@@ -187,6 +187,12 @@ Any further attempt to connect to the VPN is made without having to contact the 
 
 <p>The API was previously located in Sweden. While Stockholm is a beautiful city, it is a bit too far up in the north.  Based on the last 30 days usage, we realised that relocating the central server to Germany/Frankfurt makes more sense. For the majority of our users, this would lessen their distance to the central server and hence it would speed up the connection speed even more.</p>
 
+<h2 id="spreading-the-traffic-across-the-servers">Spreading the traffic across the servers</h2>
+
+<p>Tegant VPN has another feature that makes it unique compared to other VPNs out there. We have introduced a load balancing feature to spread the traffic evenly across the VPN servers. This method avoids that specific servers are over utilised and slowed down, while others remain underutilised.</p>
+
+<p>When a user taps on the connect button, the central server checks which of the servers is less busy and returns the profile of that server to the user’s iPhone.  The user’s iPhone knows then how to connect to the given server.  This method ensures that the users are always connected to the least busy server and always experience the best VPN speed.</p>
+
 <p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comment section below.</p>
 
                     </div>
