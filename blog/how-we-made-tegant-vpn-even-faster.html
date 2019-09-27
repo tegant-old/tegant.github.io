@@ -19,15 +19,15 @@
   
   
   
-<meta property="og:title" content="How We Made Tegant VPN Even Faster"/>
+<meta property="og:title" content="How we made Tegant VPN even faster!"/>
 <meta property="og:image" content="https://tegant.com/assets/post-img/faster-vpn.jpg"/>
 <meta property="og:url" content="https://tegant.com/blog/how-we-made-tegant-vpn-even-faster.html"/>
-<meta property="og:description" content="Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!"/>
+<meta property="og:description" content="Many of our customers send us regular feedback about Tegant, which is extremely helpful to us and allows us to constantly improve the app. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could go even further and make Tegant connect even faster!"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@TegantVPN"/>
 <meta name="twitter:creator" content="@TegantVPN"/>
-<meta name="twitter:title" content="How We Made Tegant VPN Even Faster"/>
-<meta name="twitter:description" content="Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!"/>
+<meta name="twitter:title" content="How we made Tegant VPN even faster!"/>
+<meta name="twitter:description" content="Many of our customers send us regular feedback about Tegant, which is extremely helpful to us and allows us to constantly improve the app. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could go even further and make Tegant connect even faster!"/>
 <meta name="twitter:image" content="https://tegant.com/assets/post-img/faster-vpn.jpg"/>
 <link rel="canonical" href="https://tegant.com/blog/how-we-made-tegant-vpn-even-faster"/>
   
@@ -144,56 +144,49 @@ window.cookieconsent.initialise({
                 <article class="post h-entry article" itemscope itemtype="http://schema.org/BlogPosting">
 
                     <header class="post-header">
-                        <h1 class="post-title p-name" itemprop="name headline">How We Made Tegant VPN Even Faster</h1>
+                        <h1 class="post-title p-name" itemprop="name headline">How we made Tegant VPN even faster!</h1>
                         <p class="post-meta">
                             
                         </p>
                     </header>
 
                     <div class="post-content e-content" itemprop="articleBody">
-                        <p>Many of our customers send us regular feedback about Tegant, which is very helpful to us to improve the app even further. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could build on top of it and make Tegant connect even faster!</p>
+                        <p>Many of our customers send us regular feedback about Tegant, which is extremely helpful to us and allows us to constantly improve the app. One thing we are often praised for is how fast Tegant is. This feedback has touched us and made us wonder if we could go even further and make Tegant connect even faster!</p>
 
 <!--more-->
 
 <p><img src="/assets/post-img/faster-vpn.jpg" alt="Faster VPN" />
 <sub>Photo by Lucas França</sub></p>
 
-<p>At first, it seemed very challenging to see what else we could do to make Tegant even faster than it already is. We knew that every time a user taps on the connect button, we had to connect to the central server first to run some checks. Moreover, the central server isn’t always located in the same region as the VPN server itself. Hence depending on the location of the user, this can slow down the process by a couple of seconds.</p>
+<p>At first, it seemed very challenging to seek out ways in which we could make Tegant even faster than it already is. We knew that every time a user taps on the connect button, we had to connect to the central server first to run some checks. Moreover, the central server isn’t always located in the same region as the VPN server itself. Hence, depending on the location of the user, this can slow down the process by a couple of seconds.</p>
 
-<p>So we came up with an idea how to solve this. As long as the user has valid access, there should be no further need to call the central server.</p>
+<p>So, we came up with a way to solve this: as long as the user has valid access, there should be no further need to call the central server.</p>
 
-<h2 id="reduced-the-validation-calls-to-the-central-server">Reduced the validation calls to the central server</h2>
+<h2 id="the-reduction-of-validation-calls-to-the-central-server">The reduction of validation calls to the central server</h2>
 
 <p>The following three bullet points define when your access counts as valid:</p>
 
 <ul>
-  <li>
-    <p>Free users get a seven day grace period upon signup, where they can use the app completely uninterrupted. They can connect to the VPN without having to authenticate with the central server.</p>
-  </li>
-  <li>
-    <p>Free users that have finished the grace period would have to watch an advertisement video to get free credits. This is the only time they make an actual call to the central server.
-Any further attempt to connect to the VPN is made without having to contact the central server. Of course, this is as long as the app hasn’t run out of free credits.</p>
-  </li>
-  <li>
-    <p>Premium users with a valid subscription won’t have to do a round-trip to the central server anymore before connecting to the VPN. After the VPN connection has been established, there is a non-intrusive background call to the central server to check the validity of the subscription. This approach ensures that we can deal with any subscription issues.</p>
-  </li>
+  <li>Free users get a seven-day grace period upon signup, where they can use the app completely uninterrupted. They can connect to the VPN without having to authenticate with the central server.</li>
+  <li>Free users that have come to the end of the grace period, have to watch an advertisement video to get free credits. This is the only time they make an actual call to the central server. Any further attempt to connect to the VPN is made without having to contact the central server. Of course, this is as long as the app hasn’t run out of free credits.</li>
+  <li>Premium users with a valid subscription won’t have to do a round-trip to the central server anymore before connecting to the VPN. After the VPN connection has been established, there is a non-intrusive background call to the central server to check the validity of the subscription. This approach ensures that we can deal with any subscription issues.</li>
 </ul>
 
-<p>This new method makes <a href="https://tegant.com">Tegant VPN</a> much snappier when it comes to connecting to the VPN servers. In a nutshell, the background checks are deferred to a later stage. Hence the user enjoys an instant connection.</p>
+<p>This new method makes Tegant VPN much snappier when it comes to connecting to the VPN servers. In a nutshell, the background checks are deferred to a later stage. Hence the user now enjoys an instant connection.</p>
 
-<h2 id="relocated-the-central-server-to-germanyfrankfurt">Relocated the central server to Germany/Frankfurt</h2>
+<h2 id="relocation-of-the-central-server-to-frankfurt-germany">Relocation of the central server to Frankfurt, Germany</h2>
 
-<p>In the previous section, we discussed how to reduce the calls to the central server. However, we can still make the remaining mandatory calls faster as well.</p>
+<p>In the previous section, we discussed how we reduce the need for calls to the central server. In addition to this, we can still make the remaining mandatory calls faster.</p>
 
-<p>The API was previously located in Sweden. While Stockholm is a beautiful city, it is a bit too far up in the north.  Based on the last 30 days usage, we realised that relocating the central server to Germany/Frankfurt makes more sense. For the majority of our users, this would lessen their distance to the central server and hence it would speed up the connection speed even more.</p>
+<p>The API was previously located in Sweden. While Stockholm is a beautiful city, it is just a bit too far north. Based on the last 30 days usage, we realised that relocating the central server to Frankfurt, Germany makes more sense. For the majority of our users, this would reduce their distance to the central server and hence would further speed up their connection.</p>
 
 <h2 id="spreading-the-traffic-across-the-servers">Spreading the traffic across the servers</h2>
 
-<p>Tegant VPN has another feature that makes it unique compared to other VPNs out there. We have introduced a load balancing feature to spread the traffic evenly across the VPN servers. This method avoids that specific servers are over utilised and slowed down, while others remain underutilised.</p>
+<p>Tegant VPN has another feature that makes it unique when compared to other VPNs out there. We have introduced a load balancing feature that spreads traffic evenly across the VPN servers. This method avoids those specific servers that are overused and thus slowed down, while others remain free of such heavy traffic.</p>
 
-<p>When a user taps on the connect button, the central server checks which of the servers is less busy and returns the profile of that server to the user’s iPhone.  The user’s iPhone knows then how to connect to the given server.  This method ensures that the users are always connected to the least busy server and always experience the best VPN speed.</p>
+<p>When a user taps on the connect button, the central server checks which of the servers is the least busy, and returns the profile of that server to the user’s iPhone. The user’s iPhone is then instructed to connect to this particular given server. This method ensures that users are always connected to the least busy server and always experience the best VPN speed available.</p>
 
-<p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comment section below.</p>
+<p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comments section below.</p>
 
                     </div>
 

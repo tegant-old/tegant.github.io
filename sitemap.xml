@@ -4,15 +4,15 @@
         xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://tegant.com/blog/our-journey-begins</loc>
-        <lastmod>2019-09-20T00:00:00+01:00</lastmod>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
-        <loc>https://tegant.com/blog/how-to-ensure-the-vpn-itself-is-not-blocked</loc>
-        <lastmod>2019-09-20T00:00:00+01:00</lastmod>
+        <loc>https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked</loc>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
         <loc>https://tegant.com/blog/how-we-made-tegant-vpn-even-faster</loc>
-        <lastmod>2019-09-20T00:00:00+01:00</lastmod>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
         <loc>https://tegant.com/en/compare-tegant-vpn-with-other-providers</loc>
@@ -31,7 +31,7 @@
     </url>
     <url>
         <loc>https://tegant.com/en</loc>
-        <lastmod>2019-07-09T00:00:00+01:00</lastmod>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
         <loc>https://tegant.com/en/privacy-policy</loc>
@@ -62,7 +62,7 @@
     </url>
     <url>
         <loc>https://tegant.com/ar</loc>
-        <lastmod>2019-07-09T00:00:00+01:00</lastmod>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
         <loc>https://tegant.com/ar/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9-%D8%A7%D9%84%D8%AE%D8%B5%D9%88%D8%B5%D9%8A%D8%A9
@@ -93,7 +93,7 @@
     </url>
     <url>
         <loc>https://tegant.com/id</loc>
-        <lastmod>2019-07-09T00:00:00+01:00</lastmod>
+        <lastmod>2019-09-27T00:00:00+01:00</lastmod>
     </url>
     <url>
         <loc>https://tegant.com/id/kebijakan-privasi</loc>
