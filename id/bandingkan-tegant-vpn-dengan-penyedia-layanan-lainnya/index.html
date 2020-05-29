@@ -145,17 +145,21 @@ window.cookieconsent.initialise({
                         <p><img src="/assets/post-img/tegant-vpn-office.jpg" alt="Tegant dengan pemandangan Sungai Thames" class="img-responsive" />
 <sub>Foto kantor Tegant dengan pemandangan Sungai Thames</sub></p>
 
-<p>Sebuah layanan VPN yang hebat memiliki dasar empat pilar utama: kecepatan, stabilitas, keamanan dan harga. Jika satu saja dari pilar ini melemah, seluruh layanan akan runtuh dan terhenti. Mari kita tengok lebih jauh tentang masing-masing aspek ini. Kemudian kami akan menjelaskan bagaimana kami membuat perbedaan dengan layanan dan misi kami.</p>
+<p>Saat kami mulai di akhir musim panas tahun 2017, dan memasuki pasar VPN yang sudah crowded  kami ditertawakan baik oleh kawan maupun lawan. “Melawan pemain raksasa yang sudah ada di pasar itu satu hal yang mustahil,” mereka memberi tahu kami. “Siapa yang akan percaya orang luar seperti kalian dengan privasi dan keamanan yang kalian miliki?” Itu adalah pertanyaan selanjutnya. Namun kami percaya pada visi kami. Hari ini, kami melayani 50.000 pengguna iOS per bulan dan kami baru saja merilis layanan Mac kami.</p>
 
-<p>Apa yang menjadikan Tegant sebuah layanan VPN yang unik?</p>
-<ul>
-  <li><a href="#speed">Kecepatan</a></li>
-  <li><a href="#stability">Stabilitas</a></li>
-  <li><a href="#security">Keamanan</a></li>
-  <li><a href="#price">Harga</a></li>
-  <li><a href="#mind">Ketenangan Pikiran</a></li>
-  <li><a href="#mission">Misi Kami</a></li>
-</ul>
+<p>Jadi, bagaimana kami bisa berhasil seperti ini meskipun diremehkan? Well, kami di Tegant percaya pada kesederhanaan dan pada ketangguhan.</p>
+
+<p>Kami menjaga antarmuka pengguna tetap sederhana dan mudah untuk diikuti.
+Kami membuat teknologi di balik VPN kami tangguh dan tahan banting.</p>
+
+<p>Keberhasilan kami tak lepas dari semua desainer hebat yang terlibat.
+Kami menjalankan praktik terbaik Software Development Life Cycle (SLD), dan mengetes semuanya dengan seksama tanpa melewatkan apapun.</p>
+
+<p>Kami tidak selalu tampil sempurna, dan kami – seperti banyak orang – membuat kesalahan. Namun kami telah mampu menciptakan kepercayaan pada brand kami dan pada layanan pelanggan kami yang ramah.</p>
+
+<p>Mari kita tinjau beberapa aspek yang membuat VPN itu hebat.</p>
+
+<p>Dasar dari sebuah layanan VPN yang hebat terletak pada empat pilar utama:  <a href="#speed">kecepatan</a>, <a href="#stability">stabilitas</a>, <a href="#security">keamanan</a> dan <a href="#price">harga</a>. Jika satu saja dari pilar ini lemah, layanan secara keseluruhan akan terpengaruh dan ambruk Sekarang kita bahas masing-masing aspek ini. Lalu kami akan menjelaskan bagaimana kami membuat perbedaan dengan layanan kami dan misi kami.</p>
 
 <p><a id="speed"></a></p>
 <h3 id="kecepatan">Kecepatan</h3>
@@ -220,15 +224,23 @@ window.cookieconsent.initialise({
 <h3 id="stabilitas">Stabilitas</h3>
 <p>Kestabilan layanan VPN itu penting karena dua alasan. Pertama jika koneksi VPN gagal, itu tidak hanya berarti pengalaman pengguna yang buruk namun ada akibat lainnya. Saat terjadi kegagalan, perangkat akan mencoba untuk membangun kembali koneksi tanpa melewati terowongan VPN yang aman. Usaha terkoneksi kembali ini akan menelanjangi alamat IP pengguna yang sesungguhnya dan, selanjutnya, identitas pengguna akan terungkap, yang akan menerobos keamanan Anda.</p>
 
+<p>Satu cara untuk menghindarinya adalah dengan mengukur status kesehatan peladen (server) di awal, dan menyingkirkan mereka dari server pool sebelum terjadi kegagalan teknis.</p>
+
 <p>Cara lain untuk membuat layanan VPN lebih meyakinkan adalah untuk memastikan dia tidak melebihi kapasitas maksimal untuk beroperasi. Kami telah memperkenalkan sebuah load-balancer pada Tegant versi terbaru, untuk membagi lalu lintas VPN secara berimbang pada semua server kami. Load-balancer memastikan bahwa tidak ada satu server yang terus digunakan sehingga berbeban berat sementara server yang lain menganggur. Sebaliknya, beban akan terbagi secara merata ke semua server.</p>
 
 <p><a id="security"></a></p>
 <h3 id="keamanan">Keamanan</h3>
 <p>Tegant menggunakan enkripsi berstandar militer yang disebut AES-256. Sejarahnya, pemerintah AS menggunakan AES untuk melindungi rahasia mereka. Pada akhirnya, enkripsi tersebut sangat populer sehingga menjadi standar terbuka untuk kepentingan publik, privat dan komersial. AES adalah symmetric cypher, yang membutuhkan daya komputasional lebih sedikit ketimbang versi asymmetric dan membuatnya menjadi protokol ideal untuk transfer data dalam jumlah besar.</p>
 
+<p>Kami juga mengenkripsi basis data dan hard disk server kami menggunakan SHA-256, agar selalu aman. Dan ketika pelanggan mendaftar menjadi pengguna layanan kami, kami mengenkripsi kata sandi mereka dengan algoritma Argon2, yang merupakan salah satu metodologi enkripsi termutakhir yang memenangi penghargaan. Kami menggunakan dua lapis firewall untuk mengeblok semua penyusup dan mengijinkan hanya sistem internal kami yang bisa lewat. Kami benar-benar menjaga keamanan data Anda dengan amat serius.</p>
+
 <p><a id="price"></a></p>
 <h3 id="harga">Harga</h3>
-<p>Hari ini semua orang berlangganan beberapa layanan setiap bulan, seperti Netflix, Spotify atau Amazon Prime. Hal terakhir yang mereka butuhkan adalah layanan langganan mahal lain di luar yang telah mereka bayarkan selama ini. Itulah mengapa kami di Tegant terus mengoptimasi model harga kami untuk menyediakan nilai terbaik bagi uang Anda. Kami menjaga langganan bulanan serendah mungkin dan terjangkau sementara kami tetap melayani Anda dengan menyediakan kualitas sebaik mungkin.</p>
+<p>Kami di Tegant tetap menjaga model harga layanan kami demi menyediakan nilai terbaik bagi uang Anda. Kami menjaga paket langganan bulanan tetap berada pada harga rendah dan terjangkau, sementara kami tetap dimungkinkan menyediakan kualitas layanan terbaik bagi Anda.</p>
+
+<p>Di <a href="https://tegant.com/blog/benefits-of-free-registration-and-purchasing-subscriptions">posting blog</a> ini kami telah menjelaskan secara detil tentang keuntungan dan perbedaan dari kedua paket berlangganan kami yaitu “Lite” dan “Standard”, dan bagaimana aktivasi perangkat bekerja.</p>
+
+<p>Singkatnya, kami menawarkan paket berlangganan ‘Lite’ yang mendukung bermacam perangkat iOS, namun mengijinkan hanya satu perangkat yang aktif pada satu waktu, dan kami menawarkan paket berlangganan ‘Standard’ yang mengijinkan hingga tiga perangkat, termasuk Mac atau iOS, untuk beroperasi secara bersamaan. Kedua paket berlangganan ini membuat Anda mampu menikmati layanan tanpa gangguan iklan.</p>
 
 <p>Bandingkan sendiri harga antara Tegant dengan penyedia VPN lainnya:</p>
 
@@ -243,10 +255,16 @@ window.cookieconsent.initialise({
     <th>Paket 1 Tahun (Bulanan)</th>
   </tr>
   <tr class="bg-tegant-green">
-    <td>Tegant VPN</td>
-    <td>Rp 19ribu</td>
-    <td>Rp 69ribu</td>
-    <td>Rp 39ribu</td>
+    <td>Tegant VPN (Lite)</td>
+    <td>$1.99</td>
+    <td>$6.49</td>
+    <td>$3.66</td>
+  </tr>
+  <tr>
+    <td>Tegant VPN (Standard)</td>
+    <td>$3.49</td>
+    <td>$11.49</td>
+    <td>$6.49</td>
   </tr>
   <tr>
     <td>Nord VPN</td>
@@ -298,7 +316,7 @@ window.cookieconsent.initialise({
 
 <p>Inilah mengapa kami terus menerus berusaha keras melindungi privasi Anda di dunia online.</p>
 
-<p><a href="https://tegant.com">Tegant</a> tersedia di <a href="https://itunes.apple.com/us/app/tegant-vpn/id1305241374?ls=1&amp;mt=8">App Store</a> untuk iPhones dan iPads. Anda bisa saja menggunakan versi gratis untuk selamanya, meskipun dengan demikian Anda akan menerima video iklan yang tidak dipersonalisasi. Atau, Anda bisa berlangganan edisi premium yang bebas dari iklan. Langganan premium juga memungkinkan untuk memilih server kesukaan Anda dari mana saja.</p>
+<p><a href="https://tegant.com">Tegant</a> tersedia untuk <a href="https://itunes.apple.com/id/app/tegant-vpn/id1305241374?ls=1&amp;mt=8" rel="nofollow">iPhones, iPads</a> dan <a href="https://apps.apple.com/id/app/tegant-vpn/id1494789175?ls=1" rel="nofollow">Mac</a>. Anda bisa menggunakan versi gratis untuk selamanya, meskipun dengan versi gratis Anda akan menerima video iklan secara acak. Atau, Anda bisa berlangganan paket premium yang bebas iklan. Langganan premium juga memberikan keuntungan tambahan, seperti telah diuraikan dalam <a href="https://tegant.com/blog/benefits-of-free-registration-and-purchasing-subscriptions">posting blog</a> ini.</p>
 
                     </div>
                     <div class="container" id="social-media-share">

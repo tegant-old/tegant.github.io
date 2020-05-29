@@ -19,17 +19,17 @@
   
   
   
-<meta property="og:title" content="How do we ensure that the VPN itself is not blocked?"/>
-<meta property="og:image" content="https://tegant.com/assets/post-img/vpn-ip-recycling.jpg"/>
-<meta property="og:url" content="https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked.html"/>
-<meta property="og:description" content="It is crucial that a VPN service changes its IP address regularly. Internet service providers and government agencies may otherwise realise that anyone with this IP address is using a VPN service."/>
+<meta property="og:title" content="How we made it easier to maintain the VPN servers without any downtime!"/>
+<meta property="og:image" content="https://tegant.com/assets/post-img/ambulance-vpn.jpg"/>
+<meta property="og:url" content="https://tegant.com/blog/how-we-made-it-easier-to-maintain-the-VPN-servers-without-any-downtime.html"/>
+<meta property="og:description" content="Previously we had a big challenge when it came to taking down a VPN server for maintenance. The users wouldn’t know that the server was down other than seeing a red status light. But a red light is also shown when the server is too busy, and is working at its maximum capacity."/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@TegantVPN"/>
 <meta name="twitter:creator" content="@TegantVPN"/>
-<meta name="twitter:title" content="How do we ensure that the VPN itself is not blocked?"/>
-<meta name="twitter:description" content="It is crucial that a VPN service changes its IP address regularly. Internet service providers and government agencies may otherwise realise that anyone with this IP address is using a VPN service."/>
-<meta name="twitter:image" content="https://tegant.com/assets/post-img/vpn-ip-recycling.jpg"/>
-<link rel="canonical" href="https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked"/>
+<meta name="twitter:title" content="How we made it easier to maintain the VPN servers without any downtime!"/>
+<meta name="twitter:description" content="Previously we had a big challenge when it came to taking down a VPN server for maintenance. The users wouldn’t know that the server was down other than seeing a red status light. But a red light is also shown when the server is too busy, and is working at its maximum capacity."/>
+<meta name="twitter:image" content="https://tegant.com/assets/post-img/ambulance-vpn.jpg"/>
+<link rel="canonical" href="https://tegant.com/blog/how-we-made-it-easier-to-maintain-the-vpn-servers-without-any-downtime"/>
   
   <meta property="og:locale" content="en"/>
   <meta property="og:site_name" content="Tegant VPN"/>
@@ -144,26 +144,31 @@ window.cookieconsent.initialise({
                 <article class="post h-entry article" itemscope itemtype="http://schema.org/BlogPosting">
 
                     <header class="post-header">
-                        <h1 class="post-title p-name" itemprop="name headline">How do we ensure that the VPN itself is not blocked?</h1>
+                        <h1 class="post-title p-name" itemprop="name headline">How we made it easier to maintain the VPN servers without any downtime!</h1>
                         <p class="post-meta">
                             
                         </p>
                     </header>
 
                     <div class="post-content e-content" itemprop="articleBody">
-                        <p>It is crucial that a VPN service changes its IP address regularly. Internet service providers and government agencies may otherwise realise that anyone with this IP address is using a VPN service.
-<!--more--></p>
+                        <p>Previously we had a big challenge when it came to taking down a VPN server for maintenance. The users wouldn’t know that the server was down other than seeing a red status light. But a red light is also shown when the server is too busy, and is working at its maximum capacity.</p>
 
-<p><img src="/assets/post-img/vpn-ip-recycling.jpg" alt="VPN IP Recycling" />
-<sub>Photo by John Cameron</sub></p>
+<!--more-->
 
-<p>This in itself is not a problem, since the connection is still encrypted and nobody can see the online activities. However, some restrictive governments may still block the VPN’s IP address altogether, preventing anyone from connecting to it.</p>
+<p><img src="/assets/post-img/ambulance-vpn.jpg" alt="Faster customer service" />
+<sub>Photo by Camilo Jimenez</sub></p>
 
-<p>Streaming services such as Netflix whether IP addresses are being used by multiple users, and may block them. Netflix doesn’t like anyone to circumvent the geo-restrictions it has put in place.</p>
+<p>So, we came up with a new solution. Every minute, each VPN server should not only send the number of users utilising it back to the central server, but also send a timestamp to the central server. If the last updated timestamp is older than 2 minutes, it means that the given server is unhealthy, or, has been taken down for maintenance. At this point, the central server will automatically remove the given unhealthy VPN server from the available server selection list.</p>
 
-<p>This is why <a href="https://tegant.com">Tegant VPN</a> regularly changes its IP addresses, in order to remain as anonymous as possible and to protect the online privacy of its users in the best way it can.</p>
+<p>This means that, from this point in time, users can no longer select that VPN server. Once the VPN server has undergone maintenance and is ready to be selected again, it will start sending the timestamp again, at which point it will automatically be recognised as healthy once more and be added back to the server pool. </p>
 
-<p>What are your thoughts? We’d love to hear from you, so please leave your feedback in the comments section below.</p>
+<h2 id="future-of-busy-servers">Future of busy servers</h2>
+
+<p>In the future, we plan to use this methodology to remove busy VPN servers automatically, preventing them from being selected through the server selection list, because nothing is more frustrating to users than trying to connect to a busy server and repeatedly being rejected. This will lead to a better overall user experience.</p>
+
+<p>Try out <a href="https://tegant.com">Tegant VPN</a> today, and see for yourself.</p>
+
+<p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comments section below.</p>
 
                     </div>
 
@@ -172,13 +177,13 @@ window.cookieconsent.initialise({
         <div class="col-sm">
         </div>
         <div class="col-sm">
-            <div class="fb-share-button" data-href="https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked.html" data-layout="button"
+            <div class="fb-share-button" data-href="https://tegant.com/blog/how-we-made-it-easier-to-maintain-the-VPN-servers-without-any-downtime.html" data-layout="button"
                  data-size="large"><a target="_blank"
-                                      href="https://www.facebook.com/sharer/sharer.php?u=https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked.html&amp;src=sdkpreparse"
+                                      href="https://www.facebook.com/sharer/sharer.php?u=https://tegant.com/blog/how-we-made-it-easier-to-maintain-the-VPN-servers-without-any-downtime.html&amp;src=sdkpreparse"
                                       class="fb-xfbml-parse-ignore" rel="nofollow">Share</a></div>
         </div>
         <div class="col-sm">
-            <a href="https://twitter.com/intent/tweet?text=Look%20what%20I%20found%20here%3A&url=https://tegant.com/blog/how-do-we-ensure-that-the-vpn-itself-is-not-blocked.html&hashtags=vpn,iphone,ipad"
+            <a href="https://twitter.com/intent/tweet?text=Look%20what%20I%20found%20here%3A&url=https://tegant.com/blog/how-we-made-it-easier-to-maintain-the-VPN-servers-without-any-downtime.html&hashtags=vpn,iphone,ipad"
                class="twitter-share-button" data-size="large" data-show-count="false" rel="nofollow">Tweet</a>
             <script async src="https://platform.twitter.com/widgets.js"></script>
         </div>

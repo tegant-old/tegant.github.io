@@ -8,7 +8,7 @@
   <!-- Begin Jekyll SEO tag v2.5.0 -->
   <meta name="generator" content="Jekyll v3.7.4"/>
   
-  <meta name="description" content="Get free access to blocked websites and services on your iPhone or iPad - anytime, anywhere."/>
+  <meta name="description" content="Get free access to blocked websites and services on your iPhone, iPad or Mac - anytime, anywhere."/>
   
   
   <meta name="keywords" content=""/>
@@ -160,25 +160,13 @@ window.cookieconsent.initialise({
 
 <p>At first, it seemed very challenging to seek out ways in which we could make Tegant even faster than it already is. We knew that every time a user taps on the connect button, we had to connect to the central server first to run some checks. Moreover, the central server isn’t always located in the same region as the VPN server itself. Hence, depending on the location of the user, this can slow down the process by a couple of seconds.</p>
 
-<p>So, we came up with a way to solve this: as long as the user has valid access, there should be no further need to call the central server.</p>
+<p>To speed up the process even further, we had to find out the whereabouts of a bottleneck and find ways in which to improve it. The performance tests pointed out the database to be the slowest part of the process. So, we laid out a plan for how to improve this.</p>
 
-<h2 id="the-reduction-of-validation-calls-to-the-central-server">The reduction of validation calls to the central server</h2>
+<h2 id="relocating-the-database-closer-to-the-central-api">Relocating the database closer to the central API</h2>
+<p>Whenever the user presses the start button, certain information and security exchanges have to take place. The VPN app calls the central API, which in turn connects to the database to store or fetch further details about the user. The farther the database is from the API, the more that latency will increase, which leads to a slower experience. Having the database locally, on the same server as the API, will speed up the API’s responsiveness significantly. </p>
 
-<p>The following three bullet points define when your access counts as valid:</p>
-
-<ul>
-  <li>Free users get a seven-day grace period upon signup, where they can use the app completely uninterrupted. They can connect to the VPN without having to authenticate with the central server.</li>
-  <li>Free users that have come to the end of the grace period, have to watch an advertisement video to get free credits. This is the only time they make an actual call to the central server. Any further attempt to connect to the VPN is made without having to contact the central server. Of course, this is as long as the app hasn’t run out of free credits.</li>
-  <li>Premium users with a valid subscription won’t have to do a round-trip to the central server anymore before connecting to the VPN. After the VPN connection has been established, there is a non-intrusive background call to the central server to check the validity of the subscription. This approach ensures that we can deal with any subscription issues.</li>
-</ul>
-
-<p>This new method makes Tegant VPN much snappier when it comes to connecting to the VPN servers. In a nutshell, the background checks are deferred to a later stage. Hence the user now enjoys an instant connection.</p>
-
-<h2 id="relocation-of-the-central-server-to-frankfurt-germany">Relocation of the central server to Frankfurt, Germany</h2>
-
-<p>In the previous section, we discussed how we reduce the need for calls to the central server. In addition to this, we can still make the remaining mandatory calls faster.</p>
-
-<p>The API was previously located in Sweden. While Stockholm is a beautiful city, it is just a bit too far north. Based on the last 30 days usage, we realised that relocating the central server to Frankfurt, Germany makes more sense. For the majority of our users, this would reduce their distance to the central server and hence would further speed up their connection.</p>
+<h2 id="increasing-the-servers-memory">Increasing the server’s memory</h2>
+<p>The next step was to increase the server’s memory. With increased memory available to the server, more tasks can be executed at the same time, which leads to a boost to the system. We wanted to make a big difference, so we doubled the memory.</p>
 
 <h2 id="spreading-the-traffic-across-the-servers">Spreading the traffic across the servers</h2>
 
@@ -186,7 +174,33 @@ window.cookieconsent.initialise({
 
 <p>When a user taps on the connect button, the central server checks which of the servers is the least busy, and returns the profile of that server to the user’s iPhone. The user’s iPhone is then instructed to connect to this particular given server. This method ensures that users are always connected to the least busy server and always experience the best VPN speed available.</p>
 
-<p>What are your thoughts? Do you like the new approach? Let us know your feedback in the comments section below.</p>
+<h2 id="choosing-a-faster-and-safer-password-encryption-algorithm">Choosing a faster, and safer password encryption algorithm</h2>
+<p>Every time the user taps the start button, their credentials have to be verified by our central server before granting access. The password verification that we have used previously was a pure Python implementation of Sha-256. We simulated 10 password encryptions, which took 3.9 seconds to accomplish.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>s = """\
+from passlib.hash import sha256_crypt
+h = sha256_crypt.hash("password")
+"""
+t = timeit.timeit(stmt=s, number=10)
+print(t)
+3.9277894550468773
+</code></pre></div></div>
+
+<p>In comparison, we have utilised Argon2 encryption methodology instead. The same scenario took an impressive 1.7 seconds to accomplish. This is nearly 2.3 times faster, which means that the user has to wait a much shorter time for the connection to be verified and established.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import timeit
+s = """\
+from passlib.hash import argon2
+h = argon2.hash("password")
+"""
+t = timeit.timeit(stmt=s, number=10)
+print(t)
+1.7192389100091532
+</code></pre></div></div>
+
+<p>Argon2 uses a C-based library, which makes it faster than the pure Python implementation of Sha-256 we had before.  Using Argon2 over Sha-256 for password encryption doesn’t mean that we have compromised security over speed. Argon2 is, in fact, the latest encryption methodology, which won the Password Hashing Competition in July 2015.</p>
+
+<p>What are your thoughts? Do you like how we made <a href="https://tegant.com">Tegant VPN</a> faster? Let us know your feedback in the comments section below.</p>
 
                     </div>
 
